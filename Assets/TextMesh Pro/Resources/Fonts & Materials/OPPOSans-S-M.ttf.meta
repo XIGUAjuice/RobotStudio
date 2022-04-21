@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ab8cfcd9efcbc2d469ed354cf33bfa03
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - OPPOSans-S
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6f1ca994ebc4b1040a2cb71cb85e7ef7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
