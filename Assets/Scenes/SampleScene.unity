@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2854378}
+  - component: {fileID: 2854379}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Untagged
@@ -155,6 +156,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2854379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a399a36620f9444fad8a4a86120573f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &29127479
 GameObject:
   m_ObjectHideFlags: 0
@@ -12211,9 +12224,9 @@ GameObject:
   - component: {fileID: 1975151552}
   - component: {fileID: 1975151551}
   - component: {fileID: 1975151550}
-  - component: {fileID: 1975151553}
+  - component: {fileID: 1975151554}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: Console
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12388,7 +12401,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975151548}
   m_CullTransparentMesh: 1
---- !u!114 &1975151553
+--- !u!114 &1975151554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12397,7 +12410,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1975151548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fb8f37558c566f4d970f5f1f967b008, type: 3}
+  m_Script: {fileID: 11500000, guid: 33cc6646250779a40a4d0f7262b55e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2020707267

@@ -117,9 +117,10 @@
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Packages/MathNet.Numerics.5.0.0/lib/netstandard2.0/MathNet.Numerics.dll"
 -r:"Assets/Plugins/x86_64/websocket-sharp.dll"
--r:"E:/Personal/Study/毕业设计/robot_unity/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll"
--r:"E:/Personal/Study/毕业设计/robot_unity/Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"E:/Personal/Study/毕业设计/RobotStudio/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll"
+-r:"E:/Personal/Study/毕业设计/RobotStudio/Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"E:/Unity/Unity 2021.2.17f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"E:/Unity/Unity 2021.2.17f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"E:/Unity/Unity 2021.2.17f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -755,6 +756,7 @@
 "Assets/Scripts/EndEffector.cs"
 "Assets/Scripts/GizmoListener.cs"
 "Assets/Scripts/Network.cs"
+"Assets/Scripts/RemoteRobot.cs"
 "Assets/Scripts/RobotAlgorithm.cs"
 "Assets/Scripts/SliderControl.cs"
 "Assets/Scripts/SliderReset.cs"

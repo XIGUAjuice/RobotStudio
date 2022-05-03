@@ -15,10 +15,16 @@ public class Network : MonoBehaviour
     private const int port = 2000;
 
     private IPEndPoint remoteEP;    // ECB的ip与端口
-    private IPEndPoint recvEP;      // 存储接收数据时对方的ip与端口
-    private UdpClient client;       // UDP客户端
+    public IPEndPoint recvEP;      // 存储接收数据时对方的ip与端口
+    public UdpClient client;       // UDP客户端
     private TMP_InputField inputField;      // 输入框
     private bool hasMessage;
+    private bool waitForMsg;
+    public bool WaitForMsg
+    {
+        get { return waitForMsg; }
+        set { waitForMsg = value; }
+    }
     private string msg;
 
 
@@ -27,9 +33,11 @@ public class Network : MonoBehaviour
         inputField = gameObject.GetComponent<TMP_InputField>();
 
         client = new UdpClient(8888);   // 开启UDP客户端
-        client.Client.ReceiveTimeout = 5000;
+        client.Client.ReceiveTimeout = 10000;    // 设置UDP超时时间
         remoteEP = new IPEndPoint(IPAddress.Parse(ip), port);   // 指定ECB的ip与端口号
         recvEP = new IPEndPoint(IPAddress.Any, 0);      // 存储接收数据时对方的ip与端口
+
+        waitForMsg = false;
 
         // // 在新线程中异步等待消息
         // client.BeginReceive(new AsyncCallback(recvCallback), null);
@@ -44,10 +52,6 @@ public class Network : MonoBehaviour
             {
                 string[] text = inputField.text.Split('\n');
                 string command = text[text.Length - 2];
-                if (command == "connect")
-                {
-                    connect();
-                }
             }
         }
 
@@ -60,7 +64,7 @@ public class Network : MonoBehaviour
         }
     }
 
-    private byte[] hexStr2Bytes(string hex)
+    public byte[] hexStr2Bytes(string hex)
     {
         /* 将十六进制字符串转换为字节数组 */
         return Enumerable.Range(0, hex.Length)
@@ -73,8 +77,22 @@ public class Network : MonoBehaviour
     {
         /* 将十六进制字符串转换成字节后发送 */
         byte[] bytes = hexStr2Bytes(msg);
+
+        while (waitForMsg) { }  // 等待上一个发送-接收处理完毕再发送下一个消息
+
+        waitForMsg = true;
         client.Send(bytes, bytes.Length, remoteEP);
         Debug.Log($"发送数据: {BitConverter.ToString(bytes)}");
+    }
+
+    public string[] recvMsg()
+    {
+        /* 将收到的消息转换成十六进制字符串 */
+        byte[] bytesRecv = client.Receive(ref recvEP);
+        string msgRecv = BitConverter.ToString(bytesRecv);
+        Debug.Log($"接收数据: {msgRecv}");
+
+        return msgRecv.Split('-');
     }
 
     private void recvCallback(IAsyncResult ar)
@@ -89,25 +107,4 @@ public class Network : MonoBehaviour
         client.BeginReceive(new AsyncCallback(recvCallback), null);
     }
 
-    private async void connect()
-    {
-        sendMsg("EE00440000ED");
-        try
-        {
-            byte[] bytes = await Task.Run(() => client.Receive(ref recvEP));
-            string msg = BitConverter.ToString(bytes);
-            if (msg == "EE-00-44-00-01-01-00-00-ED")
-            {
-                Debug.Log("连接成功");
-            }
-            else
-            {
-                throw new TimeoutException("连接超时");
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e.ToString());
-        }
-    }
 }

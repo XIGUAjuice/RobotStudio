@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{cf63a3fc-3f9d-b688-09fe-e3e341b2e419}</ProjectGuid>
+    <ProjectGuid>{ab0a5153-1669-a9d1-d27a-03e2efb4934c}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -278,7 +278,6 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\FileSystem.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\GizmoObjectVertexSnapDrag3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Creation\LineMesh.cs" />
-     <Compile Include="Assets\Scripts\Network.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\ConeShape3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\Grid\XZGridLookAndFeel.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\GizmoDragChannel.cs" />
@@ -427,6 +426,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\Vector2Ex.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Handles\GizmoHandle.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Primitive Math\CircleMath.cs" />
+     <Compile Include="Assets\Scripts\Network.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\ObjectSpawnUtil.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\2D Caps\GizmoCap2DType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\2D Caps\GizmoArrowCap2DController.cs" />
@@ -454,6 +454,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\2D Caps\GizmoCap2DCollection.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Input\InputDeviceType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\PlaneDescriptor.cs" />
+     <Compile Include="Assets\Scripts\RemoteRobot.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -472,6 +473,7 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Packages\MathNet.Numerics.5.0.0\lib\netstandard2.0\MathNet.Numerics.xml" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\Runtime Transform Gizmos\Docs\Readme.txt" />
      <None Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Resources\Shaders\RTApp_TorusCull.shader" />
@@ -729,13 +731,16 @@
         <HintPath>E:\Unity\Unity 2021.2.17f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="websocket-sharp">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Assets\Plugins\x86_64\websocket-sharp.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Assets\Plugins\x86_64\websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Assets\Packages\MathNet.Numerics.5.0.0\lib\netstandard2.0\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>E:\Unity\Unity 2021.2.17f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -1104,73 +1109,73 @@
         <HintPath>E:\Unity\Unity 2021.2.17f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\robot_unity\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
