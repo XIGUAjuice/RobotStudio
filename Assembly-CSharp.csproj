@@ -57,6 +57,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\MaterialEx.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\3D Caps\GizmoSphereCap3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoFillMode2D.cs" />
+     <Compile Include="Assets\DTW\dataLoader.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Creation\PyramidMesh.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\LayerEx.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\PolygonShape2D.cs" />
@@ -344,6 +345,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\SnapMath.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\QuadShape3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D Quad\GizmoQuad3DBorderController.cs" />
+     <Compile Include="Assets\DTW\MotionClassifier.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Primitive Math\PrismMath.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Resource Management\MeshPool.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Plane Slider\GizmoQuadPlaneSlider3DController.cs" />
@@ -406,6 +408,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Application\IRLDApplication.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\3D Caps\GizmoPyramidCap3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Sphere.cs" />
+     <Compile Include="Assets\Scripts\RemoteRobot.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Line Slider\IGizmoLineSlider2DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\ObjectPositionCalculator.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Creation\TorusMesh.cs" />
@@ -454,7 +457,6 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\2D Caps\GizmoCap2DCollection.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Input\InputDeviceType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\PlaneDescriptor.cs" />
-     <Compile Include="Assets\Scripts\RemoteRobot.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -730,6 +732,9 @@
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>E:\Unity\Unity 2021.2.17f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="MathNet.Numerics">
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Assets\Packages\MathNet.Numerics.5.0.0\lib\netstandard2.0\MathNet.Numerics.dll</HintPath>
+    </Reference>
     <Reference Include="websocket-sharp">
         <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Assets\Plugins\x86_64\websocket-sharp.dll</HintPath>
     </Reference>
@@ -738,9 +743,6 @@
     </Reference>
     <Reference Include="ReportGeneratorMerged">
         <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="MathNet.Numerics">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Assets\Packages\MathNet.Numerics.5.0.0\lib\netstandard2.0\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>E:\Unity\Unity 2021.2.17f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

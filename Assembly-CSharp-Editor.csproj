@@ -299,6 +299,9 @@
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
         <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\PackageCache\com.unity.collab-proxy@1.15.13\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="MathNet.Numerics">
+        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Assets\Packages\MathNet.Numerics.5.0.0\lib\netstandard2.0\MathNet.Numerics.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
         <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\PackageCache\com.unity.collab-proxy@1.15.13\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>

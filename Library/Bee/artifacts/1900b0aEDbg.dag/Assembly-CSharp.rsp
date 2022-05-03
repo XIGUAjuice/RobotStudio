@@ -350,6 +350,8 @@
 "Assets/AIUI/JsonClass.cs"
 "Assets/AIUI/Speech.cs"
 "Assets/AIUI/WavUtility.cs"
+"Assets/DTW/dataLoader.cs"
+"Assets/DTW/MotionClassifier.cs"
 "Assets/Runtime Transform Gizmos/Demo Scenes/Demo.cs"
 "Assets/Runtime Transform Gizmos/Scripting Tutorials/Tut_0_CreatingGizmos_and_AssigningObjects.cs"
 "Assets/Runtime Transform Gizmos/Scripting Tutorials/Tut_1_Enabling_and_Disabling_Gizmos.cs"
