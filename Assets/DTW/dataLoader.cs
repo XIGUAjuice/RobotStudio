@@ -47,7 +47,7 @@ class DataLoader : IEnumerable<MotionData>
         {
             List<Vector<double>> data = new List<Vector<double>>();
             string[] lines = file.text.Split("\n");
-            string motionName = lines[0].Split(",")[^1];
+            string motionName = lines[0].Split(",")[^1][0..^1];     // 最后一个字符是换行符 需要排除
             foreach (var line in lines[1..^1])      // 最后一行是空行 需要排除
             {
                 double[] values = line.Split(",").Where(x => double.TryParse(x, out _)).Select(double.Parse).ToArray();

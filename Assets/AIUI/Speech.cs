@@ -33,11 +33,11 @@ class Speech : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                                   $"\"clean_dialog_history\":\"{CLEAN_HISTORY}\"}}";
 
     /* 预制件，将需要的对象传入 */
-    public GameObject endEffector;  // 受操纵的末端执行器对象 
+    public GameObject objectEndEffector;  // 受操纵的末端执行器游戏对象 
     public GameObject Base;         // 机械臂基座
-    public GameObject cameraMain;       // 相机对象
 
     /* 成员变量 */
+    private EndEffector endEffector;    // 末端执行器类对象
     private Transform transBase;    // 基座的位姿
     private string direction = "";  // 机械臂末端下一次移动的方向
     private float distance = 0;     // 机械臂末端下一次移动的距离
@@ -50,6 +50,7 @@ class Speech : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         Debug.Log($"构造请求参数: {param}");
         transBase = Base.transform;     // 获取基座的位姿
+        endEffector = objectEndEffector.GetComponent<EndEffector>();    // 获取末端执行器类对象
     }
 
     public void Update()
@@ -57,49 +58,43 @@ class Speech : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         /* 循环检测是否websocket返回语义信息，若有则按指令运动机械臂 */
         if (hasMessage)
         {
-            /* 将末端执行器位姿转换到相机坐标系下 */
-            Transform transCamera = cameraMain.transform;
-            Vector3 position = transCamera.InverseTransformPoint(endEffector.transform.position);
-            Quaternion rotation = Quaternion.Inverse(transCamera.rotation) * endEffector.transform.rotation;
-            Vector3 angles = rotation.eulerAngles;
-
             /* 判断方向，在相机坐标系下进行移动 */
-            if (direction == "上")
+            if (direction.Equals("上"))
             {
                 Debug.Log($"机械臂向上移动了{distance}毫米");
-                position.y += distance;
+                endEffector.moveInCameraTrans(new Vector3(0, distance, 0), new Vector3(0, 0, 0));
+                // position.y += distance;
             }
-            else if (direction == "下")
+            else if (direction.Equals("下"))
             {
                 Debug.Log($"机械臂向下移动了{distance}毫米");
-                position.y -= distance;
+                endEffector.moveInCameraTrans(new Vector3(0, -distance, 0), new Vector3(0, 0, 0));
+                // position.y -= distance;
             }
-            else if (direction == "左")
+            else if (direction.Equals("左"))
             {
                 Debug.Log($"机械臂向左移动了{distance}毫米");
-                position.x -= distance;
+                endEffector.moveInCameraTrans(new Vector3(-distance, 0, 0), new Vector3(0, 0, 0));
+                // position.x -= distance;
             }
-            else if (direction == "右")
+            else if (direction.Equals("右"))
             {
                 Debug.Log($"机械臂向右移动了{distance}毫米");
-                position.x += distance;
+                endEffector.moveInCameraTrans(new Vector3(distance, 0, 0), new Vector3(0, 0, 0));
+                // position.x += distance;
             }
-            else if (direction == "前")
+            else if (direction.Equals("前"))
             {
                 Debug.Log($"机械臂向前移动了{distance}毫米");
-                position.z += distance;
+                endEffector.moveInCameraTrans(new Vector3(0, 0, distance), new Vector3(0, 0, 0));
+                // position.z += distance;
             }
-            else if (direction == "后")
+            else if (direction.Equals("后"))
             {
                 Debug.Log($"机械臂向后移动了{distance}毫米");
-                position.z -= distance;
+                endEffector.moveInCameraTrans(new Vector3(0, 0, -distance), new Vector3(0, 0, 0));
+                // position.z -= distance;
             }
-
-            /* 将末端执行器位姿从相机坐标系转换回世界坐标系 */
-            position = transCamera.TransformPoint(position);
-            rotation = transCamera.rotation * rotation;
-
-            endEffector.GetComponent<EndEffector>().moveEndEffector(position, rotation);
 
             /* 清除websocket传入的消息 */
             hasMessage = false;

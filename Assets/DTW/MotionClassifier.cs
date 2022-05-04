@@ -3,23 +3,33 @@ using System.Collections.Generic;
 using MathNet.Numerics.LinearAlgebra;
 using MathNet.Numerics;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Text;
+using TMPro;
 
 public class MotionClassifier : MonoBehaviour
 {
-    private DataLoader dataLoader;
+    /* 预制件 */
+    public GameObject objectEndEffector;
+    public TMP_InputField inputStep;
+    public Button connectButton;
+
+    /* 成员变量 */
+    private EndEffector endEffector;        // 末端执行器类对象
+    private DataLoader dataLoader;  // 数据集
     private const string ip = "192.168.1.113";  // 遥控器的ip
     private const int port = 2000;  // 遥控器的端口
     private IPEndPoint remoteEP;    // 遥控器的ip与端口
     private IPEndPoint recvEP;      // 存储接收数据时对方的ip与端口
     private UdpClient client;       // UDP客户端
-    private string strRecv;
+    private List<string> lines;
     private bool hasMessage = false;
+    private bool connected = false;
 
     private double DTW(List<Vector<double>> series1, List<Vector<double>> series2, Func<Vector<double>, Vector<double>, double> distanceFunc)
     {
@@ -36,7 +46,7 @@ public class MotionClassifier : MonoBehaviour
         for (int i = 0; i < m; i++)
         {
             for (int j = 0; j < n; j++)
-            {   
+            {
                 double cost = distanceFunc(series1[i], series2[j]);
                 matrix[i + 1, j + 1] = cost + new double[] { matrix[i, j + 1], matrix[i + 1, j], matrix[i, j] }.Min();
             }
@@ -63,57 +73,73 @@ public class MotionClassifier : MonoBehaviour
         return label;
     }
 
+    public void onConnectClick()
+    {
+        // 发送握手消息
+        Debug.Log("发送握手消息");
+        byte[] bytesSend = Encoding.ASCII.GetBytes("hello");
+        client.Send(bytesSend, bytesSend.Length, remoteEP);
+
+        Task.Run(() =>
+        {
+            byte[] bytesRecv = client.Receive(ref recvEP);
+            string strRecv = Encoding.ASCII.GetString(bytesRecv);
+            Debug.Log(strRecv);
+            if (strRecv.Equals("hello"))
+            {
+                connected = true;
+                Debug.Log("连接成功");
+            }
+        });
+    }
+
     void Start()
     {
+        endEffector = objectEndEffector.GetComponent<EndEffector>();        // 获取末端执行器类对象
         dataLoader = new DataLoader();  // 建立数据集
         client = new UdpClient(8889);   // 开启UDP客户端
         remoteEP = new IPEndPoint(IPAddress.Parse(ip), port);   // 指定遥控器的ip与端口号
         recvEP = new IPEndPoint(IPAddress.Any, 0);      // 存储接收数据时对方的ip与端口
-
-        // 发送握手消息
-        byte[] bytesSend = Encoding.ASCII.GetBytes("hello");
-        client.Send(bytesSend, bytesSend.Length, remoteEP);
-        hasMessage = false;
+        lines = new List<string>();     // 初始化消息列表
 
         Task.Run(() =>
         {
             while (true)
             {
-                byte[] bytesRecv = client.Receive(ref recvEP);
-                strRecv = Encoding.ASCII.GetString(bytesRecv);
-                Debug.Log("接收到消息");
-                Debug.Log(strRecv);
-                hasMessage = true;
+                if (connected)
+                {
+                    byte[] bytesRecv = client.Receive(ref recvEP);
+                    string strRecv = Encoding.ASCII.GetString(bytesRecv);
+                    if (strRecv.Equals("start"))
+                    {
+                        lines.Clear();
+                    }
+                    else if (strRecv.Equals("end"))
+                    {
+                        hasMessage = true;
+                    }
+                    else
+                    {
+                        lines.Add(strRecv);
+                    }
+                }
             }
         });
-
-        // var costs = Matrix<double>.Build.Dense(dataLoader.Len, dataLoader.Len);
-        // for (int i = 0; i < dataLoader.Len; i++)
-        // {
-        //     var data1 = dataLoader[i];
-        //     for (int j = 0; j < dataLoader.Len; j++)
-        //     {
-        //         var data2 = dataLoader[j];
-        //         List<Vector<double>> series1 = data1.Data;
-        //         List<Vector<double>> series2 = data2.Data;
-        //         double cost = DTW(series1, series2, Distance.Manhattan);
-        //         costs[i, j] = cost;
-        //     }
-        // }
-        // Debug.Log(costs.ToString(30, 30));
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (connected)
+        {
+            connectButton.image.color = new Color32(142, 243, 70, 173);
+        }
         if (hasMessage)
-        {   
-            string[] lines = strRecv.Split("\n");
+        {
             List<Vector<double>> dataToClassify = new List<Vector<double>>();
             var V = Vector<double>.Build;
 
-            foreach (var line in lines[0..^1])     // 最后一行是空行，需排除
-            {  
+            foreach (var line in lines)
+            {
                 double[] values = line.Split(',').Select(Double.Parse).ToArray();
                 Vector<double> accl = V.DenseOfArray(values);
                 dataToClassify.Add(accl);
@@ -132,6 +158,38 @@ public class MotionClassifier : MonoBehaviour
                 }
             }
             Debug.Log($"动作识别为{label}");
+            float distance = float.Parse(inputStep.text);
+            /* 判断方向，在相机坐标系下进行移动 */
+            if (label.Equals("up"))
+            {
+                Debug.Log($"机械臂向上移动了{distance}毫米");
+                endEffector.moveInCameraTrans(new Vector3(0, distance, 0), new Vector3(0, 0, 0));
+            }
+            else if (label.Equals("down"))
+            {
+                Debug.Log($"机械臂向下移动了{distance}毫米");
+                endEffector.moveInCameraTrans(new Vector3(0, -distance, 0), new Vector3(0, 0, 0));
+            }
+            else if (label.Equals("left"))
+            {
+                Debug.Log($"机械臂向左移动了{distance}毫米");
+                endEffector.moveInCameraTrans(new Vector3(-distance, 0, 0), new Vector3(0, 0, 0));
+            }
+            else if (label.Equals("right"))
+            {
+                Debug.Log($"机械臂向右移动了{distance}毫米");
+                endEffector.moveInCameraTrans(new Vector3(distance, 0, 0), new Vector3(0, 0, 0));
+            }
+            else if (label.Equals("front"))
+            {
+                Debug.Log($"机械臂向前移动了{distance}毫米");
+                endEffector.moveInCameraTrans(new Vector3(0, 0, distance), new Vector3(0, 0, 0));
+            }
+            else if (label.Equals("back"))
+            {
+                Debug.Log($"机械臂向后移动了{distance}毫米");
+                endEffector.moveInCameraTrans(new Vector3(0, 0, -distance), new Vector3(0, 0, 0));
+            }
             hasMessage = false;
         }
     }

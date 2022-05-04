@@ -3,10 +3,11 @@ using UnityEngine.UI;
 using RTG;
 
 public class EndEffector : MonoBehaviour
-{   
+{
     /* 预制件 */
     public Slider[] sliders;    // 移动末端执行器需要通过控制Slider
     public GameObject Base;     // 机械臂基座
+    public GameObject cameraMain;       // 相机对象
 
     /* 成员变量 */
     private ObjectTransformGizmo objectUniversalGizmo;  // 附加在末端执行器上的Gizmo控制组件
@@ -16,7 +17,7 @@ public class EndEffector : MonoBehaviour
     private SliderControl[] sliderControls;    // Slider控制对象的集合
 
     private void Start()
-    {   
+    {
         /* 初始化Gizmo控件 */
         objectUniversalGizmo = RTGizmosEngine.Get.CreateObjectUniversalGizmo();
         objectUniversalGizmo.Gizmo.SetEnabled(false);
@@ -27,14 +28,14 @@ public class EndEffector : MonoBehaviour
         endEffector = gameObject;
         transBase = Base.transform;
         sliderControls = new SliderControl[6];
-        for(int i = 0; i < 6; i++)
+        for (int i = 0; i < 6; i++)
         {
             sliderControls[i] = sliders[i].GetComponent<SliderControl>();
         }
     }
 
     private void Update()
-    {   
+    {
         /* 处理鼠标左键点击事件 */
         if (RTInput.WasLeftMouseButtonPressedThisFrame() &&
             RTGizmosEngine.Get.HoveredGizmo == null)
@@ -65,9 +66,9 @@ public class EndEffector : MonoBehaviour
     }
 
     private void OnTargetObjectChanged(GameObject newTargetObject)
-    {   
+    {
         /* 处理事件：鼠标指向的物体有变化 */
-        
+
         // 存储新指向的对象
         targetObject = newTargetObject;
 
@@ -87,11 +88,11 @@ public class EndEffector : MonoBehaviour
     }
 
     public void moveEndEffector(Vector3 position, Quaternion rotation)
-    {   
+    {
         /* 获取当前的关节角 */
         double[] jointAnglesCur = new double[6];
-        for(int i = 0; i < 6; i++)
-        {   
+        for (int i = 0; i < 6; i++)
+        {
             double jointAngle = sliderControls[i].jointAngleCur.z;
             jointAnglesCur[i] = jointAngle;
         }
@@ -100,18 +101,18 @@ public class EndEffector : MonoBehaviour
         var solution = Algorithm.IkNearest(position, rotation, transBase, jointAnglesCur);
 
         /* 通过控制Slider来应用逆运动学解 */
-        if(solution.Count > 0)
-        {   
+        if (solution.Count > 0)
+        {
 
             float[] slidersValues = new float[6];   // 存储需要设置的slider.value
 
             /* 得到的逆运动学解不一定在工作空间内，需要进行判断 */
-            for(int i = 0; i < solution.Count; i++)
-            {   
+            for (int i = 0; i < solution.Count; i++)
+            {
                 double angleZero = sliderControls[i].jointAngleZero.z;
-                slidersValues[i] =  (float)(solution[i] - angleZero);
-                if(slidersValues[i] > sliders[i].maxValue || slidersValues[i] < sliders[i].minValue)
-                {   
+                slidersValues[i] = (float)(solution[i] - angleZero);
+                if (slidersValues[i] > sliders[i].maxValue || slidersValues[i] < sliders[i].minValue)
+                {
                     /* 当需要设置的slider.value超出了slider的上下限时即超出了工作空间 */
                     Debug.Log("逆运动学解超出工作空间，无法移动！");
                     Debug.Log($"当前逆运动学解: ({slidersValues[0]}, {slidersValues[1]}, {slidersValues[2]}, {slidersValues[3]}, {slidersValues[4]}, {slidersValues[5]})");
@@ -119,7 +120,7 @@ public class EndEffector : MonoBehaviour
                 }
             }
             /* 确认所有关节变量都在允许的范围内才进行设置 */
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 sliders[i].value = slidersValues[i];
             }
@@ -128,5 +129,24 @@ public class EndEffector : MonoBehaviour
         {
             Debug.Log("逆运动学无解！");
         }
+    }
+
+    public void moveInCameraTrans(Vector3 deltaPositions, Vector3 deltaAngles)
+    {
+        /* 将末端执行器位姿转换到相机坐标系下 */
+        Transform transCamera = cameraMain.transform;
+        Vector3 position = transCamera.InverseTransformPoint(endEffector.transform.position);
+        Quaternion rotation = Quaternion.Inverse(transCamera.rotation) * endEffector.transform.rotation;
+        Vector3 angles = rotation.eulerAngles;
+
+        /* 运动增量 */
+        position += deltaPositions;
+        angles += deltaAngles;
+
+        /* 将末端执行器位姿从相机坐标系转换回世界坐标系 */
+        position = transCamera.TransformPoint(position);
+        rotation = transCamera.rotation * rotation;
+
+        endEffector.GetComponent<EndEffector>().moveEndEffector(position, rotation);
     }
 }
