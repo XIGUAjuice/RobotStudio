@@ -39,10 +39,13 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Creation\CircleMesh.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Plane Slider\GizmoCirclePlaneSlider3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Quad\GizmoThinQuad2DBorderController.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Instant Motion Tracking\InstantMotionTrackingSolution.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\ImageSourceProvider.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\Shape2DBorderType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Vector3Ref.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Line Slider\GizmoLineSlider2D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\GizmoScreenDrag.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Iris Tracking\IrisTrackingSolution.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\Grid\XZGridCell.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\SceneRaycastPrecision.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\GizmoRotationArc3D.cs" />
@@ -50,18 +53,25 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\GraphicsEx.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\GizmoRotationArc3DLookAndFeel.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\Shape2DBorderDirection.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Hair Segmentation\HairSegmentationSolution.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\GizmoObjectVertexSnapSettings.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Plane Slider\GizmoPlaneSlider3DCollection.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Primitive Math\SphereMath.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\Grid\XZGridSettings.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Hair Segmentation\HairSegmentationConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\MaterialEx.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\3D Caps\GizmoSphereCap3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoFillMode2D.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Instant Motion Tracking\Anchor3dAnnotation.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Instant Motion Tracking\RegionTrackingGraph.cs" />
      <Compile Include="Assets\DTW\dataLoader.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Creation\PyramidMesh.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\LayerEx.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Object Detection\ObjectDetectionGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\PolygonShape2D.cs" />
      <Compile Include="Assets\SwigTools\Interface\DoubleVector.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Holistic\HolisticTrackingSolution.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\UI\Scripts\AutoFit.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\ArcShape2D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Line Slider\GizmoBoxLineSlider2DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\SegmentShape3D.cs" />
@@ -70,12 +80,14 @@
      <Compile Include="Assets\Scripts\SliderControl.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\3D Caps\GizmoConeCap3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\RTGizmosEngine.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\ImageSource\TextureFrame.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Input\Hotkeys.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D Quad\IGizmoQuad3DBorderController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Creation\BoxMesh.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Data Management\MeshVertexChunk.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\ObjectSurfaceSnap.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\QuadShape2D.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Object Detection\ObjectDetectionSolution.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Handles\GizmoHandleShape2D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Line Slider\IGizmoLineSlider3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\GameObjectEx.cs" />
@@ -89,14 +101,18 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Camera\CameraZoomSettings.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\Shape3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Line Slider\GizmoLineSlider2DSettings.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\ImageSource\StaticImageSource.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Line Slider\GizmoThinLineSlider3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\ObjectSnap.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripting Tutorials\Tut_1_Enabling_and_Disabling_Gizmos.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\UI\Scripts\SolutionMenu.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D Circle\GizmoThinCircle3DBorderController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\IRTTransformGizmoListener.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\SpriteRendererEx.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\ImageSourceSolution.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\ConeShape2D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Quad\IGizmoQuad2DBorderController.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\ImageSource\ImageSource.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\Object2ObjectSnapDataDb.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Plane Slider\GizmoRATrianglePlaneSlider3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Input\RTInputDevice.cs" />
@@ -108,20 +124,25 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Move Gizmo\MoveGizmoLookAndFeel2D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\GizmoCap.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\Grid\XZGridRayHit.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\GlobalConfigManager.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripting Tutorials\Tut_2_MultipleTargetObjects.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Box Tracking\BoxTrackingSolution.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\ObjectBounds.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D Quad\GizmoQuad3DBorder.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\RunningMode.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Plane Slider\GizmoPolygonPlaneSlider2DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Universal Gizmo\UniversalGizmoSettingsType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D RATriangle\GizmoRATriangle3DBorder.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\SceneOverlapFilter.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Effects\ColorTransition.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Core Types\YesNoAnswer.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Instant Motion Tracking\InstantMotionTrackingConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\EqTriangle2D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\Grid\SceneGridHotkeys.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\UndoRedo\IUndoRedoAction.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Line Slider\GizmoLineSlider2DCollection.cs" />
      <Compile Include="Assets\AIUI\Speech.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Instant Motion Tracking\Anchor3dAnnotationController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Input\InputDeviceBase.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Core Types\Priority.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\UndoRedo\RTUndoRedo.cs" />
@@ -140,6 +161,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Effects\ColorRef.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Universal Gizmo\UniversalGizmoLookAndFeel2D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Gizmo.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\ImageSource\ImageSourceType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Primitive Math\PlaneMath.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoPlane3DType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Scale Gizmo\ScaleGizmoLookAndFeel3D.cs" />
@@ -153,6 +175,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\GizmoObjectTransformPivot.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\Shape2D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\Object2ObjectSnapData.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Hand Tracking\HandTrackingSolution.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Axis.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\GizmoCollectionEnabledStateSnapshot.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\OBB.cs" />
@@ -162,6 +185,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D Circle\GizmoTorusCircle3DBorderController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Polygon\GizmoThickPolygon2DBorderController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\GizmoSlider.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\Bootstrap.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\RTSystemValues.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\GizmoSglAxisOffsetDrag3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Editor UI\EditorToolbar.cs" />
@@ -172,17 +196,20 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Creation\QuadMesh.cs" />
      <Compile Include="Assets\SwigTools\Interface\SWIGTYPE_p_Matrix4d.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Move Gizmo\MoveGizmoHotkeys.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Objectron\ObjectronSolution.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Plane Slider\IGizmoPlaneSlider3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\3D Caps\IGizmoCap3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Creation\SphereMesh.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\Object2ObjectSnap.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\3D Caps\GizmoCap3D.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\Screen.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\UndoRedo\UndoRedoActions.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D Quad\GizmoQuad3DBorderControllerData.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Camera\CameraHotkeys.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Camera\CameraRotationSwitchSettings.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Scene Gizmo\RTSceneGizmoCamera.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Circle\GizmoCircle2DBorder.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Hand Tracking\HandTrackingConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Line Slider\GizmoLineSlider3DSettings.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Universal Gizmo\UniversalGizmoConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Handles\GizmoHandleId.cs" />
@@ -190,6 +217,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Rotation Gizmo\RotationGizmoLookAndFeel3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Camera\RTFocusCamera.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Scaling\GizmoScalerHandle.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Iris Tracking\IrisTrackingGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoTransform.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Primitive Math\Primitive Epsilons.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Materials\GizmoSolidMaterial.cs" />
@@ -200,6 +228,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\RectEx.cs" />
      <Compile Include="Assets\SwigTools\Interface\Gluon.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Plane Slider\GizmoPlaneSlider3DLookAndFeel.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Pose Tracking\PoseTrackingSolution.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D Circle\IGizmoCircle3DBorderController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Polygon\IGizmoPolygon2DBorderController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\GizmoDblAxisRotationDrag3D.cs" />
@@ -208,20 +237,24 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoHoverInfo.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripting Tutorials\Tut_4_Mesh_and_Center_Pivots.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Circle\GizmoCircle2DBorderController.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\UI\Scripts\Modal.cs" />
      <Compile Include="Assets\Scripts\RobotAlgorithm.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\RTCustomObjectInteractionSettings.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Line Slider\GizmoLineSlider3DControllerData.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Materials\GizmoLineMaterial.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Line Slider\GizmoCylinderLineSlider3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\ColorEx.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\MemoizedLogger.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Primitive Math\TorusMath.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Camera\RTCameraBackground.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\RightAngTriangle2D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Camera\CameraPrjSwitchTransition.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Polygon\GizmoThinPolygon2DBorderController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\2D Caps\GizmoCircleCap2DController.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\ImageSource\VideoSource.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Plane Slider\GizmoPlaneSlider3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\ObjectVertexCollect.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Selfie Segmentation\SelfieSegmentationGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripting Tutorials\Tut_6_CustomWorldPivot.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\SpriteEx.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Universal Gizmo\UniversalGizmoSettingsCategory.cs" />
@@ -236,7 +269,9 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Plane Slider\IGizmoPlaneSlider2DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\IGizmoDragSession.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Circle\GizmoCircle2DBorderControllerData.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\StartSceneController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\UniqueNameGen.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Box Tracking\BoxTrackingGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Universal Gizmo\UniversalGizmoSettings2D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Rotation Gizmo\RotationGizmo.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\PyramidShape3D.cs" />
@@ -253,9 +288,11 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Core Types\RenderPipelineId.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Resource Management\TexturePool.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Move Gizmo\MoveGizmo.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Objectron\ObjectronConfig.cs" />
      <Compile Include="Assets\Scripts\SliderReset.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\PlaneEx.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Plane Slider\GizmoPlaneSlider2D.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\InferenceMode.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Camera\CameraMoveSettings.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\GameObjectRayHit.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Editor UI\Settings.cs" />
@@ -266,14 +303,17 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Plane Slider\GizmoQuad2DBorderType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\TerrainEx.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripting Tutorials\Tut_0_CreatingGizmos_and_AssigningObjects.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Hair Segmentation\HairSegmentationGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\PlaneQuadrantId.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D Circle\GizmoCircle3DBorder.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Input\InputDeviceDeltaCapture.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\RayEx.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoTransformSnapshot.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Iris Tracking\IrisTrackingConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Scene Gizmo\SceneGizmoLookAndFeel.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Primitive Math\QuadMath.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Primitive Math\SegmentMath.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\MediaPipe Video\MediaPipeVideoSolution.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Gizmo Behaviour\IGizmoBehaviour.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Transform\TransformSnapshot.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\FileSystem.cs" />
@@ -288,6 +328,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\ObjectTransformGizmo.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Demo Scenes\Demo.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Line Slider\GizmoLineSlider3DCollection.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\ImageSource\WebCamSource.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\Grid\IXZGrid.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Quad\GizmoQuad2DBorderControllerData.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Transform\TransformAxis.cs" />
@@ -299,6 +340,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Plane Slider\GizmoPlaneSlider2DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\GizmoDblAxisOffsetDrag3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Rotation Gizmo\RotationGizmoHotkeys.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\Solution.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Editor UI\RLDEditorWindow.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Line Slider\GizmoLineSlider2DLookAndFeel.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Scene Gizmo\SceneGizmoCamViewportUpdater.cs" />
@@ -309,17 +351,24 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Circle\GizmoThinCircle2DBorderController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Scene Gizmo\ISceneGizmoCamViewportUpdater.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Camera\CameraProjectionSwitchSettings.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Face Detection\FaceDetectionConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\MathEx.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\BVH\SphereTreeNode.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\CircleShape2D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoDimension.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D RATriangle\GizmoRATriangle3DBorderControllerData.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Pose Tracking\PoseTrackingConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\EditorUndoEx.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Plane Slider\GizmoPlaneSlider2DLookAndFeel.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Input\MouseButton.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Data Management\RTMesh.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Box Tracking\BoxTrackingConfig.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Objectron\ObjectronGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\GizmoUniformScaleDrag3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Move Gizmo\MoveGizmoSettings2D.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\ImageSource\TextureFramePool.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Face Mesh\FaceMeshSolution.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\MediaPipe Video\MediaPipeVideoConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D Circle\GizmoCircle3DBorderController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Input\MouseInputDevice.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\GizmoPlaneDrag3D.cs" />
@@ -332,14 +381,17 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\RTGApp.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Plane Slider\GizmoPlaneSlider3DControllerData.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoLine2DType.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\AssetLoader.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Circle\IGizmoCircle2DBorderController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Creation\PrismMesh.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\GizmoDragSession.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\UI\Scripts\GUIConsole.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\Shape2DExtentPoint.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\ScenePhysicsMode.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Input\IInputDevice.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\2D Caps\GizmoCap2D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Plane Slider\GizmoCircle2DBorderType.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\UI\Scripts\ModalButton.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Plane Slider\GizmoPlaneSlider2DControllerData.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\CylinderShape3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\SnapMath.cs" />
@@ -352,9 +404,12 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Line Slider\GizmoLineSlider2DControllerData.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Scaling\GizmoDblAxisScaleMode.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D RATriangle\IGizmoRATriangle3DBorderController.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Face Mesh\FaceMeshConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Move Gizmo\MoveGizmoLookAndFeel3D.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Face Detection\FaceDetectionGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\RTScene.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoShadeMode.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\UI\Scripts\ImageSourceConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Data Management\MeshVertexChunkCollection.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Editor UI\DragAndDropHandler.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\3D Caps\GizmoCap3DControllerData.cs" />
@@ -365,9 +420,11 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Universal Gizmo\UniversalGizmoSettings3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Primitive Math\PrimitiveFactory.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Objects\PivotPointShapeType.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Object Detection\ObjectDetectionConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Objects\ObjectPool.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Scene Gizmo\Scene Gizmo Handles\SceneGizmoMidCap.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\RightAngTriangle3D.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Selfie Segmentation\SelfieSegmentationConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\GizmoRotationArcFillFlags.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoOverrideColor.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoMultiAxisScaleMode.cs" />
@@ -379,8 +436,11 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Universal Gizmo\UniversalGizmoLookAndFeel3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\2D Caps\IGizmoCap2DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\SegmentShape2D.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\External\FontAwesome\UnicodeInlineText.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Face Mesh\FaceMeshGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\3D RATriangle\GizmoThinRATriangle3DBorderController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Camera\CameraSettings.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Hand Tracking\HandTrackingGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\CameraEx.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Materials\GizmoLabelMaterial.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Handles\GizmoHandleCollection.cs" />
@@ -403,8 +463,10 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Line Slider\GizmoBoxLineSlider3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\3D Caps\GizmoCap3DType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Plane Slider\GizmoPlaneSlider3DController.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Pose Tracking\PoseTrackingGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\3D Caps\GizmoBoxCap3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\3D Line Slider\GizmoLineSlider3DController.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Holistic\HolisticTrackingGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Application\IRLDApplication.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\3D Caps\GizmoPyramidCap3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Sphere.cs" />
@@ -412,16 +474,20 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Line Slider\IGizmoLineSlider2DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Utilities\ObjectPositionCalculator.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Creation\TorusMesh.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\UI\Scripts\ModalContents.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoTransformAxisMap3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\Shape3DRaycastMode.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\BVH\SphereTreeNodeRayHit.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\GpuManager.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Scene Gizmo\ISceneGizmo.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\UI\Scripts\LogLine.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Editor UI\EditorToolbarTab.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Data Management\RTMeshDb.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Creation\CylinderMesh.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\BoxShape3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Quad\GizmoQuad2DBorder.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Universal Gizmo\UniversalGizmo.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\WaitForResult.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Handles\IGizmoHandle.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\MeshRayHit.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Handles\GizmoHandleHoverData.cs" />
@@ -435,16 +501,21 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\2D Caps\GizmoArrowCap2DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Scene Gizmo\Scene Gizmo Handles\SceneGizmoAxisCap.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\IGizmoCap.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Holistic\HolisticTrackingConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Data Management\RTMeshCompiler.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoDragInfo.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Shapes\ArcShape3D.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoSnapMode.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Selfie Segmentation\SelfieSegmentationSolution.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\PlaneId.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Scene\Grid\RTSceneGrid.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Data Management\MeshTransform.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Transform Gizmos\Scale Gizmo\ScaleGizmoHotkeys.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Face Detection\FaceDetectionSolution.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Meshes\Data Management\MeshVertexChunkCollectionDb.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\UI\Scripts\GlobalConfig.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\Primitive Math\BoxMath.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Common\Scripts\GraphRunner.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\2D Plane Slider\GizmoPolygon2DBorderType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Sliders\Borders\2D Polygon\GizmoPolygon2DBorderController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Rendering\GLRenderer.cs" />
@@ -454,40 +525,80 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\GizmoEngineSettings.cs" />
      <Compile Include="Assets\SwigTools\Interface\DoubleVector2d.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\GizmoSglAxisRotationDrag3D.cs" />
+     <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\MediaPipe Video\MediaPipeVideoGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\2D Caps\GizmoCap2DCollection.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Input\InputDeviceType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\PlaneDescriptor.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Face Detection\face_detection_opengles.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Iris Tracking\iris_tracking_gpu.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Face Detection\face_detection_cpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Pose Tracking\pose_tracking_cpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Hand Tracking\hand_tracking_gpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Selfie Segmentation\selfie_segmentation_cpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Hair Segmentation\hair_segmentation_opengles.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Box Tracking\box_tracking_cpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Pose Tracking\pose_tracking_opengles.txt" />
      <None Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Resources\Shaders\RTApp_SimpleColor.shader" />
      <None Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Resources\Shaders\RTApp_GizmoSolidHandle.shader" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Object Detection\object_detection_cpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Iris Tracking\iris_tracking_opengles.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Resources\Shaders\RTApp_CircleCull.shader" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\MediaPipe Video\official_hand_tracking_demo_opengles.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Box Tracking\box_tracking_gpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Selfie Segmentation\selfie_segmentation_gpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Hand Tracking\hand_tracking_opengles.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Instant Motion Tracking\region_tracking_cpu.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Instant Motion Tracking\region_tracking_opengles.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Hair Segmentation\hair_segmentation_gpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Pose Tracking\pose_tracking_gpu.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Resources\Shaders\RTApp_TintedTexture.shader" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Object Detection\object_detection_gpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Face Mesh\face_mesh_gpu.txt" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Hair Segmentation\hair_segmentation_cpu.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Objectron\objectron_gpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Face Mesh\face_mesh_opengles.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Instant Motion Tracking\region_tracking_gpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Holistic\holistic_cpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\MediaPipe Video\official_hand_tracking_demo_gpu.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Hand Tracking\hand_tracking_cpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\MediaPipe Video\official_hand_tracking_demo_cpu.txt" />
      <None Include="Assets\Packages\MathNet.Numerics.5.0.0\lib\netstandard2.0\MathNet.Numerics.xml" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Object Detection\object_detection_opengles.txt" />
      <None Include="Assets\Runtime Transform Gizmos\Docs\Readme.txt" />
      <None Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Resources\Shaders\RTApp_TorusCull.shader" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Selfie Segmentation\selfie_segmentation_opengles.txt" />
      <None Include="Assets\Runtime Transform Gizmos\Docs\Version History.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Box Tracking\box_tracking_opengles.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Holistic\holistic_opengles.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Iris Tracking\iris_tracking_cpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Objectron\objectron_opengles.txt" />
      <None Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Resources\Shaders\RTApp_LinearGradientCameraBk.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Resources\Shaders\RTApp_CylindricalTorusCull.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Holistic\holistic_gpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Face Detection\face_detection_gpu.txt" />
      <None Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Resources\Shaders\RTApp_XZGrid_Plane.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Face Mesh\face_mesh_cpu.txt" />
+     <None Include="Assets\MediaPipeUnity\Samples\Scenes\Objectron\objectron_cpu.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
         <HintPath>E:\Unity\Unity 2021.2.17f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -733,16 +844,22 @@
         <HintPath>E:\Unity\Unity 2021.2.17f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="MathNet.Numerics">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Assets\Packages\MathNet.Numerics.5.0.0\lib\netstandard2.0\MathNet.Numerics.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Assets\Packages\MathNet.Numerics.5.0.0\lib\netstandard2.0\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="websocket-sharp">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Assets\Plugins\x86_64\websocket-sharp.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Assets\Plugins\x86_64\websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Packages\com.github.homuler.mediapipe\Runtime\Plugins\Protobuf\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Packages\com.github.homuler.mediapipe\Runtime\Plugins\Protobuf\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>E:\Unity\Unity 2021.2.17f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -1111,73 +1228,76 @@
         <HintPath>E:\Unity\Unity 2021.2.17f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
-        <HintPath>E:\Personal\Study\毕业设计\RobotStudio\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaPipeSDK">
+        <HintPath>E:\Personal\Study\graduation_project\RobotStudio\Library\ScriptAssemblies\MediaPipeSDK.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
