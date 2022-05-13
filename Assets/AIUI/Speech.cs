@@ -39,10 +39,13 @@ class Speech : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     /* 成员变量 */
     private EndEffector endEffector;    // 末端执行器类对象
     private Transform transBase;    // 基座的位姿
-    private string direction = "";  // 机械臂末端下一次移动的方向
+    private string direction = string.Empty;  // 机械臂末端下一次移动的方向
     private float distance = 0;     // 机械臂末端下一次移动的距离
+    private string axis = string.Empty;     // 机械臂末端下一次旋转的轴
+    private float degree = 0;       // 机械臂末端下一次旋转的角度
     private WebSocket server;       // websocket客户端
-    private bool hasMessage = false;// 是否收到websocket返回的消息
+    private bool hasCartesian = false;  // 是否收到笛卡尔运动的意图
+    private bool hasRotation = false;   // 是否收到旋转运动的意图
     private string device;          // 麦克风设备号
     private AudioClip audioClip;    // 录制的音频
 
@@ -54,71 +57,82 @@ class Speech : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
 
     public void Update()
-    {   
+    {
         /* 循环检测是否websocket返回语义信息，若有则按指令运动机械臂 */
-        if (hasMessage)
+        if (hasCartesian)   // 笛卡尔运动
         {
             /* 判断方向，在相机坐标系下进行移动 */
             if (direction.Equals("上"))
             {
-                Debug.Log($"机械臂向上移动了{distance}毫米");
                 endEffector.moveInCameraTrans(new Vector3(0, distance, 0), new Vector3(0, 0, 0));
-                // position.y += distance;
             }
             else if (direction.Equals("下"))
             {
-                Debug.Log($"机械臂向下移动了{distance}毫米");
                 endEffector.moveInCameraTrans(new Vector3(0, -distance, 0), new Vector3(0, 0, 0));
-                // position.y -= distance;
             }
             else if (direction.Equals("左"))
             {
-                Debug.Log($"机械臂向左移动了{distance}毫米");
                 endEffector.moveInCameraTrans(new Vector3(-distance, 0, 0), new Vector3(0, 0, 0));
-                // position.x -= distance;
             }
             else if (direction.Equals("右"))
             {
-                Debug.Log($"机械臂向右移动了{distance}毫米");
                 endEffector.moveInCameraTrans(new Vector3(distance, 0, 0), new Vector3(0, 0, 0));
-                // position.x += distance;
             }
             else if (direction.Equals("前"))
             {
-                Debug.Log($"机械臂向前移动了{distance}毫米");
                 endEffector.moveInCameraTrans(new Vector3(0, 0, distance), new Vector3(0, 0, 0));
-                // position.z += distance;
             }
             else if (direction.Equals("后"))
             {
-                Debug.Log($"机械臂向后移动了{distance}毫米");
                 endEffector.moveInCameraTrans(new Vector3(0, 0, -distance), new Vector3(0, 0, 0));
-                // position.z -= distance;
             }
+            Debug.Log($"机械臂向{direction}移动了{distance}毫米");
 
             /* 清除websocket传入的消息 */
-            hasMessage = false;
-            direction = "";
+            hasCartesian = false;
+            direction = string.Empty;
             distance = 0;
+        }
+        if (hasRotation)     // 旋转运动
+        {
+            /* 判断旋转轴，在末端执行器坐标系下运动 */
+            if (axis.Equals("x"))
+            {
+                endEffector.moveInLocalTrans(new Vector3(0, 0, 0), new Vector3(degree, 0, 0));
+            }
+            else if (axis.Equals("y"))
+            {
+                endEffector.moveInLocalTrans(new Vector3(0, 0, 0), new Vector3(0, degree, 0));
+            }
+            else if (axis.Equals("z"))
+            {
+                endEffector.moveInLocalTrans(new Vector3(0, 0, 0), new Vector3(0, 0, degree));
+            }
+            Debug.Log($"机械臂绕{axis}轴旋转了{degree}度");
+
+            /* 清除websocket传入的消息 */
+            hasRotation = false;
+            axis = string.Empty;
+            degree = 0;
         }
     }
 
     public static string currentTimeMillis()
-    {   
+    {
         /* 获取时间戳 */
         long currenttimemillis = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
         return String.Format("{0}", currenttimemillis / 1000L);
     }
 
     public static string EncodeBase64(string source)
-    {   
+    {
         /* Base64加密 */
         byte[] bytes = Encoding.UTF8.GetBytes(source);
         return Convert.ToBase64String(bytes);
     }
 
     public static string SHA256EncryptString(string data)
-    {   
+    {
         /* SHA256加密 */
         byte[] bytes = Encoding.UTF8.GetBytes(data);
         byte[] hash = SHA256Managed.Create().ComputeHash(bytes);
@@ -145,7 +159,7 @@ class Speech : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
 
     private void serverShakeHand()
-    {   
+    {
         /* 与AIUI服务器握手建立通信 */
 
         string url = BASE_URL + getHandShakeParams();   //构造请求地址
@@ -178,7 +192,7 @@ class Speech : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
 
     private void on_message(object sender, MessageEventArgs e)
-    {   
+    {
         /* 对服务器返回的数据进行解析 */
 
         string jsonString = e.Data;
@@ -191,22 +205,44 @@ class Speech : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             List<Semantic> semantics = response.data.intent.semantic;
             foreach (var semantic in semantics)
             {
-                Debug.Log("匹配到意图");
-                List<Slot> slots = semantic.slots;
-                foreach (var slot in slots)
+                if (semantic.intent.Equals("Cartesian"))
                 {
-                    if (slot.name == "direction")
+                    Debug.Log("匹配到意图为：笛卡尔运动");
+                    hasCartesian = true;
+                    List<Slot> slots = semantic.slots;
+                    foreach (var slot in slots)
                     {
-                        direction = slot.value;
-                        Debug.Log("确定方向为" + direction);
-                    }
-                    else if (slot.name == "distance")
-                    {
-                        distance = float.Parse(slot.value);
-                        Debug.Log("确定距离为" + distance);
+                        if (slot.name == "direction")
+                        {
+                            direction = slot.value;
+                            Debug.Log("确定方向为" + direction);
+                        }
+                        else if (slot.name == "distance")
+                        {
+                            distance = float.Parse(slot.value);
+                            Debug.Log("确定距离为" + distance);
+                        }
                     }
                 }
-                hasMessage = true;
+                else if (semantic.intent.Equals("rotation"))
+                {
+                    Debug.Log("匹配到意图为：旋转运动运动");
+                    hasRotation = true;
+                    List<Slot> slots = semantic.slots;
+                    foreach (var slot in slots)
+                    {
+                        if (slot.name.Equals("axis"))
+                        {
+                            axis = slot.value;
+                            Debug.Log("确定旋转轴为" + axis);
+                        }
+                        else if (slot.name == "degree")
+                        {
+                            degree = float.Parse(slot.normValue);
+                            Debug.Log("确定旋转角为" + degree);
+                        }
+                    }
+                }
             }
         }
     }
@@ -217,7 +253,7 @@ class Speech : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
 
     public void OnPointerDown(PointerEventData eventData)
-    {   
+    {
         /* 处理事件: 鼠标左键按下 */
 
         serverShakeHand();      // 握手建立通信
@@ -227,7 +263,7 @@ class Speech : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
 
     public void OnPointerUp(PointerEventData eventData)
-    {   
+    {
         /* 处理事件: 鼠标左键弹起 */
 
         Microphone.End(device);     // 结束录音

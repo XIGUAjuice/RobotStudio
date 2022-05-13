@@ -32,7 +32,7 @@ public class Network : MonoBehaviour
     {
         inputField = gameObject.GetComponent<TMP_InputField>();
 
-        client = new UdpClient(8888);   // 开启UDP客户端
+        client = new UdpClient(10005);   // 开启UDP客户端
         client.Client.ReceiveTimeout = 10000;    // 设置UDP超时时间
         remoteEP = new IPEndPoint(IPAddress.Parse(ip), port);   // 指定ECB的ip与端口号
         recvEP = new IPEndPoint(IPAddress.Any, 0);      // 存储接收数据时对方的ip与端口

@@ -14,7 +14,7 @@ public static class Algorithm
         rotation = Quaternion.Inverse(transBase.rotation) * rotation;
         Vector3 angles = rotation.eulerAngles;
 
-        Debug.Log($"逆运动学目标位姿(机械臂基座坐标系): Position: ({position.x}, {position.y}, {position.z}), Angles: ({angles.x}, {angles.y}, {angles.z})");
+        // Debug.Log($"逆运动学目标位姿(机械臂基座坐标系): Position: ({position.x}, {position.y}, {position.z}), Angles: ({angles.x}, {angles.y}, {angles.z})");
 
         var T70 = Gluon.poseTotrans(angles.x, angles.y, angles.z, position.x, position.y, position.z);
         var solutions = Gluon.IkSolver(T70);

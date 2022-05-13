@@ -9,12 +9,13 @@ public class EndEffector : MonoBehaviour
     public GameObject Base;     // 机械臂基座
     public GameObject cameraMain;       // 相机对象
 
+
     /* 成员变量 */
     private ObjectTransformGizmo objectUniversalGizmo;  // 附加在末端执行器上的Gizmo控制组件
     private GameObject targetObject;    // 鼠标指向的对象
-    private GameObject endEffector;     // 机械臂末端执行器对象
+    private GameObject objectEndEffector;    // 末端执行器游戏对象
     private Transform transBase;        // 机械臂基座的位姿
-    private SliderControl[] sliderControls;    // Slider控制对象的集合
+    private SliderControl[] sliderControls;    // Slider类控制对象的集合
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class EndEffector : MonoBehaviour
         objectUniversalGizmo.Gizmo.UniversalGizmo.LookAndFeel3D.SetScMidCapVisible(false);
 
         /* 初始化成员变量 */
-        endEffector = gameObject;
+        objectEndEffector = gameObject;
         transBase = Base.transform;
         sliderControls = new SliderControl[6];
         for (int i = 0; i < 6; i++)
@@ -56,7 +57,7 @@ public class EndEffector : MonoBehaviour
         if (Physics.Raycast(ray, out rayHit, float.MaxValue))
         {
             GameObject objectHit = rayHit.collider.gameObject;
-            if (objectHit == endEffector)
+            if (objectHit == objectEndEffector)
             {
                 return objectHit;
             }
@@ -135,18 +136,34 @@ public class EndEffector : MonoBehaviour
     {
         /* 将末端执行器位姿转换到相机坐标系下 */
         Transform transCamera = cameraMain.transform;
-        Vector3 position = transCamera.InverseTransformPoint(endEffector.transform.position);
-        Quaternion rotation = Quaternion.Inverse(transCamera.rotation) * endEffector.transform.rotation;
+        Vector3 position = transCamera.InverseTransformPoint(objectEndEffector.transform.position);
+        Quaternion rotation = Quaternion.Inverse(transCamera.rotation) * objectEndEffector.transform.rotation;
         Vector3 angles = rotation.eulerAngles;
 
         /* 运动增量 */
         position += deltaPositions;
         angles += deltaAngles;
+        rotation.eulerAngles = angles;
 
         /* 将末端执行器位姿从相机坐标系转换回世界坐标系 */
         position = transCamera.TransformPoint(position);
         rotation = transCamera.rotation * rotation;
 
-        endEffector.GetComponent<EndEffector>().moveEndEffector(position, rotation);
+        moveEndEffector(position, rotation);
+    }
+
+    public void moveInLocalTrans(Vector3 deltaPositions, Vector3 deltaAngles)
+    {
+        /* 获取末端执行器坐标系下的位姿 */
+        Transform transEndEffector = objectEndEffector.transform;
+        Vector3 position =  deltaPositions;
+        Quaternion rotation = new Quaternion();
+        rotation.eulerAngles = deltaAngles;
+
+        /* 将位姿从末端执行器坐标系转换到世界坐标系 */
+        position = transEndEffector.TransformPoint(position);
+        rotation = transEndEffector.rotation * rotation;
+
+        moveEndEffector(position, rotation);
     }
 }

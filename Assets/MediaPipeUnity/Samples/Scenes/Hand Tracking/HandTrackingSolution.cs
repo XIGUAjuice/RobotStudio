@@ -104,9 +104,9 @@ namespace Mediapipe.Unity.HandTracking
                 float indexFingerZ = handLandmarks[0].Landmark[8].Z;
                 if (lastZ != 0)
                 {
-                    float deltaX = (indexFingerX - lastX) * 50;
-                    float deltaY = (indexFingerY - lastY) * 50;
-                    float deltaZ = (indexFingerZ - lastZ) * 300;
+                    float deltaX = (indexFingerX - lastX) * 100;
+                    float deltaY = (indexFingerY - lastY) * 100;
+                    float deltaZ = (indexFingerZ - lastZ) * 200;
                     if (deltaX < 1 && deltaX > -1)
                     {
                         deltaX = 0;

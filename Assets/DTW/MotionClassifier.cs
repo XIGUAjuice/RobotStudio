@@ -18,6 +18,8 @@ public class MotionClassifier : MonoBehaviour
     public GameObject objectEndEffector;
     public TMP_InputField inputStep;
     public Button connectButton;
+    public Button cartesianButton;
+    public Button rotationButton;
 
     /* 成员变量 */
     private EndEffector endEffector;        // 末端执行器类对象
@@ -27,9 +29,15 @@ public class MotionClassifier : MonoBehaviour
     private IPEndPoint remoteEP;    // 遥控器的ip与端口
     private IPEndPoint recvEP;      // 存储接收数据时对方的ip与端口
     private UdpClient client;       // UDP客户端
-    private List<string> lines;
-    private bool hasMessage = false;
-    private bool connected = false;
+    private List<string> lines;     // 存储动作消息
+    private Vector3 ypr;         // 存储旋转角度
+    private bool hasCartesianMessage = false;    // 是否有完整的动作序列消息
+    private bool hasRotationMessage = false;    // 是否有角度消息
+    private bool connected = false;     // 遥控器连接状态
+    private bool cartesian = true;     // 位置模式
+    private bool rotation = false;     // 角度模式
+    private Color32 colorEnable;        // 表示启用的颜色
+    private Color32 colorDisable;       // 表示禁用的颜色
 
     private double DTW(List<Vector<double>> series1, List<Vector<double>> series2, Func<Vector<double>, Vector<double>, double> distanceFunc)
     {
@@ -93,14 +101,31 @@ public class MotionClassifier : MonoBehaviour
         });
     }
 
+    public void onCartesianClick()
+    {
+        // 发送握手消息
+        Debug.Log("切换到位置模式");
+        byte[] bytesSend = Encoding.ASCII.GetBytes("cartesian");
+        client.Send(bytesSend, bytesSend.Length, remoteEP);
+    }
+
+    public void onRotationClick()
+    {
+        // 发送握手消息
+        Debug.Log("切换到旋转模式");
+        byte[] bytesSend = Encoding.ASCII.GetBytes("rotation");
+        client.Send(bytesSend, bytesSend.Length, remoteEP);
+    }
     void Start()
     {
         endEffector = objectEndEffector.GetComponent<EndEffector>();        // 获取末端执行器类对象
         dataLoader = new DataLoader();  // 建立数据集
-        client = new UdpClient(8889);   // 开启UDP客户端
+        client = new UdpClient(10086);   // 开启UDP客户端
         remoteEP = new IPEndPoint(IPAddress.Parse(ip), port);   // 指定遥控器的ip与端口号
         recvEP = new IPEndPoint(IPAddress.Any, 0);      // 存储接收数据时对方的ip与端口
         lines = new List<string>();     // 初始化消息列表
+        colorEnable = new Color32(142, 243, 70, 173);
+        colorDisable = new Color32(233, 28, 51, 154);
 
         Task.Run(() =>
         {
@@ -110,17 +135,41 @@ public class MotionClassifier : MonoBehaviour
                 {
                     byte[] bytesRecv = client.Receive(ref recvEP);
                     string strRecv = Encoding.ASCII.GetString(bytesRecv);
-                    if (strRecv.Equals("start"))
+                    // Debug.Log(strRecv);
+                    if (strRecv.Equals("rotation"))
                     {
-                        lines.Clear();
+                        cartesian = false;
+                        rotation = true;
+                        Debug.Log("成功切换至旋转模式");
                     }
-                    else if (strRecv.Equals("end"))
+                    else if (strRecv.Equals("cartesian"))
                     {
-                        hasMessage = true;
+                        cartesian = true;
+                        rotation = false;
+                        Debug.Log("成功切换至位置模式");
                     }
-                    else
+                    else if (cartesian)
                     {
-                        lines.Add(strRecv);
+                        if (strRecv.Equals("start"))
+                        {
+                            lines.Clear();
+                        }
+                        else if (strRecv.Equals("end"))
+                        {
+                            hasCartesianMessage = true;
+                        }
+                        else
+                        {
+                            lines.Add(strRecv);
+                        }
+                    }
+                    else if (rotation)
+                    {
+                        var strypr = strRecv.Split(",");
+                        ypr.x = float.Parse(strypr[1]);
+                        ypr.y = float.Parse(strypr[0]);
+                        ypr.z = float.Parse(strypr[2]);
+                        hasRotationMessage = true;
                     }
                 }
             }
@@ -131,9 +180,21 @@ public class MotionClassifier : MonoBehaviour
     {
         if (connected)
         {
-            connectButton.image.color = new Color32(142, 243, 70, 173);
+            connectButton.image.color = colorEnable;
         }
-        if (hasMessage)
+
+        if (cartesian)
+        {
+            cartesianButton.image.color = colorEnable;
+            rotationButton.image.color = colorDisable;
+        }
+        else if (rotation)
+        {
+            rotationButton.image.color = colorEnable;
+            cartesianButton.image.color = colorDisable;
+        }
+
+        if (hasCartesianMessage)
         {
             List<Vector<double>> dataToClassify = new List<Vector<double>>();
             var V = Vector<double>.Build;
@@ -190,7 +251,19 @@ public class MotionClassifier : MonoBehaviour
                 Debug.Log($"机械臂向后移动了{distance}毫米");
                 endEffector.moveInCameraTrans(new Vector3(0, 0, -distance), new Vector3(0, 0, 0));
             }
-            hasMessage = false;
+            hasCartesianMessage = false;
+        }
+        else if (hasRotationMessage)
+        {
+            Debug.Log($"旋转的角度为 X:{ypr.x}  Y:{ypr.y}  Z:{ypr.z}");
+            Quaternion rotation = endEffector.transform.rotation;
+            Vector3 position = endEffector.transform.position;
+            if (!rotation.eulerAngles.Equals(ypr))
+            {
+                rotation.eulerAngles = ypr;
+                endEffector.moveEndEffector(position, rotation);
+            }
+            hasRotationMessage = false;
         }
     }
 }
