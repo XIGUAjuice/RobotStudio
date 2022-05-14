@@ -13715,7 +13715,7 @@ MonoBehaviour:
   _openGlEsConfig: {fileID: 4900000, guid: 155e81a0de3136db88c8ac8c72fad8b7, type: 3}
   _timeoutMicrosec: 50000
   modelComplexity: 1
-  maxNumHands: 1
+  maxNumHands: 2
 --- !u!114 &1816532876
 MonoBehaviour:
   m_ObjectHideFlags: 0
