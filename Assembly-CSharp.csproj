@@ -529,6 +529,8 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\2D Caps\GizmoCap2DCollection.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Input\InputDeviceType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\PlaneDescriptor.cs" />
+     <Compile Include="Assets\materials\AssignMaterial.cs" />
+     <Compile Include="Assets\Scripts\RobotReal.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\MediaPipeUnity\Samples\Scenes\Face Detection\face_detection_opengles.txt" />
      <None Include="Assets\MediaPipeUnity\Samples\Scenes\Iris Tracking\iris_tracking_gpu.txt" />

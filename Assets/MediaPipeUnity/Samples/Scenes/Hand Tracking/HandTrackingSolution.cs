@@ -157,21 +157,33 @@ namespace Mediapipe.Unity.HandTracking
                     lastZ = indexFingerZ;
                 }
                 else if (handLandmarks.Count == 2)
-                {
+                {   
+                    int leftHand = 0;
+                    int rightHand = 0;
+                    if(handedness[0].Classification[0].Label.Equals("Left"))
+                    {
+                        leftHand = 0;
+                        rightHand = 1;
+                    }
+                    else
+                    {
+                        leftHand = 1;
+                        rightHand = 0;
+                    }
                     // 阈值距离(中指第三关节到手腕的距离)
-                    float thresDistance = squareEuclidean(handLandmarks[0].Landmark[0], handLandmarks[0].Landmark[10]);
+                    float thresDistance = squareEuclidean(handLandmarks[leftHand].Landmark[0], handLandmarks[leftHand].Landmark[10]);
                     // 食指到手腕的距离
-                    float indexDistance = squareEuclidean(handLandmarks[0].Landmark[0], handLandmarks[0].Landmark[8]);
+                    float indexDistance = squareEuclidean(handLandmarks[leftHand].Landmark[0], handLandmarks[leftHand].Landmark[8]);
                     // 中指到手腕的距离
-                    float middleDistance = squareEuclidean(handLandmarks[0].Landmark[0], handLandmarks[0].Landmark[12]);
+                    float middleDistance = squareEuclidean(handLandmarks[leftHand].Landmark[0], handLandmarks[leftHand].Landmark[12]);
                     // 无名指到手腕的距离
-                    float ringDistance = squareEuclidean(handLandmarks[0].Landmark[0], handLandmarks[0].Landmark[16]);
+                    float ringDistance = squareEuclidean(handLandmarks[leftHand].Landmark[0], handLandmarks[leftHand].Landmark[16]);
                     // 小拇指到手腕的距离
-                    float pinkyDistance = squareEuclidean(handLandmarks[0].Landmark[0], handLandmarks[0].Landmark[20]);
+                    float pinkyDistance = squareEuclidean(handLandmarks[leftHand].Landmark[0], handLandmarks[leftHand].Landmark[20]);
 
                     int number = fingerNumRecognizer(thresDistance, indexDistance, middleDistance, ringDistance, pinkyDistance);
 
-                    float distance = Mathf.Sqrt(squareEuclidean(handLandmarks[1].Landmark[4], handLandmarks[1].Landmark[8]));
+                    float distance = Mathf.Sqrt(squareEuclidean(handLandmarks[rightHand].Landmark[4], handLandmarks[rightHand].Landmark[8]));
                     float degree = 0;
                     
                     if(lastDistance == -1)
@@ -190,15 +202,18 @@ namespace Mediapipe.Unity.HandTracking
                     if (degree != 0)
                     {
                         if (number == 1)
-                        {
-                            endEffector.moveInLocalTrans(new Vector3(0, 0, 0), new Vector3(degree, 0, 0));
+                        {   
+                            // 绕自身的x轴转
+                            endEffector.moveInLocalTrans(new Vector3(0, 0, 0), new Vector3(0, degree, 0));
                         }
                         else if (number == 2)
                         {
-                            endEffector.moveInLocalTrans(new Vector3(0, 0, 0), new Vector3(0, degree, 0));
+                            // 绕自身的y轴转
+                            endEffector.moveInLocalTrans(new Vector3(0, 0, 0), new Vector3(degree, 0, 0));
                         }
                         else if (number == 3)
                         {
+                            // 绕自身的z轴转
                             endEffector.moveInLocalTrans(new Vector3(0, 0, 0), new Vector3(0, 0, degree));
                         }
                         lastDistance = distance;
