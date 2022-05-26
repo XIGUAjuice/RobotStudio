@@ -204,12 +204,12 @@ namespace Mediapipe.Unity.HandTracking
                         if (number == 1)
                         {   
                             // 绕自身的x轴转
-                            endEffector.moveInLocalTrans(new Vector3(0, 0, 0), new Vector3(0, degree, 0));
+                            endEffector.moveInLocalTrans(new Vector3(0, 0, 0), new Vector3(degree, 0, 0));
                         }
                         else if (number == 2)
                         {
                             // 绕自身的y轴转
-                            endEffector.moveInLocalTrans(new Vector3(0, 0, 0), new Vector3(degree, 0, 0));
+                            endEffector.moveInLocalTrans(new Vector3(0, 0, 0), new Vector3(0, degree, 0));
                         }
                         else if (number == 3)
                         {

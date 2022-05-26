@@ -6,6 +6,7 @@ public class RobotReal : MonoBehaviour
     /* 预制件 */
     public Slider[] sliders;
     public GameObject[] joints;
+    public Toggle toggle;
 
     /* 成员变量 */
     private float speed;
@@ -79,5 +80,10 @@ public class RobotReal : MonoBehaviour
     public void onExecClick()
     {
         exec = true;
+    }
+
+    public void onToggleChanged()
+    {
+        gameObject.SetActive(toggle.isOn);
     }
 }

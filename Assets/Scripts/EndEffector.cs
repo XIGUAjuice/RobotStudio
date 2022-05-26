@@ -57,10 +57,11 @@ public class EndEffector : MonoBehaviour
         if (Physics.Raycast(ray, out rayHit, float.MaxValue))
         {
             GameObject objectHit = rayHit.collider.gameObject;
-            if (objectHit == objectEndEffector)
-            {
-                return objectHit;
-            }
+            return objectHit;
+            // if (objectHit == objectEndEffector)
+            // {
+            //     return objectHit;
+            // }
         }
 
         return null;    // 没有相交的对象

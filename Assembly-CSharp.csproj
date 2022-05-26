@@ -62,6 +62,7 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Extensions\MaterialEx.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\3D Caps\GizmoSphereCap3DController.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Core Data Types\GizmoFillMode2D.cs" />
+     <Compile Include="Assets\Scripts\RobotReal.cs" />
      <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Instant Motion Tracking\Anchor3dAnnotation.cs" />
      <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\Instant Motion Tracking\RegionTrackingGraph.cs" />
      <Compile Include="Assets\DTW\dataLoader.cs" />
@@ -525,12 +526,11 @@
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\GizmoEngineSettings.cs" />
      <Compile Include="Assets\SwigTools\Interface\DoubleVector2d.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Drag\GizmoSglAxisRotationDrag3D.cs" />
+     <Compile Include="Assets\materials\AssignMaterial.cs" />
      <Compile Include="Assets\MediaPipeUnity\Samples\Scenes\MediaPipe Video\MediaPipeVideoGraph.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Gizmos\Caps\2D Caps\GizmoCap2DCollection.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Input\InputDeviceType.cs" />
      <Compile Include="Assets\Runtime Transform Gizmos\Scripts\Runtime Package Common\Math\PlaneDescriptor.cs" />
-     <Compile Include="Assets\materials\AssignMaterial.cs" />
-     <Compile Include="Assets\Scripts\RobotReal.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\MediaPipeUnity\Samples\Scenes\Face Detection\face_detection_opengles.txt" />
      <None Include="Assets\MediaPipeUnity\Samples\Scenes\Iris Tracking\iris_tracking_gpu.txt" />
