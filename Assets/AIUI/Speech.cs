@@ -205,7 +205,7 @@ class Speech : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             List<Semantic> semantics = response.data.intent.semantic;
             foreach (var semantic in semantics)
             {
-                if (semantic.intent.Equals("Cartesian"))
+                if (semantic.intent.Equals("cartesian"))
                 {
                     Debug.Log("匹配到意图为：笛卡尔运动");
                     hasCartesian = true;
