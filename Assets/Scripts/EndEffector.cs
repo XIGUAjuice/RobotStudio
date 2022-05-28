@@ -142,6 +142,9 @@ public class EndEffector : MonoBehaviour
         Vector3 angles = rotation.eulerAngles;
 
         /* 运动增量 */
+        deltaPositions.x /= 10;
+        deltaPositions.y /= 10;
+        deltaPositions.z /= 10;
         position += deltaPositions;
         angles += deltaAngles;
         rotation.eulerAngles = angles;
