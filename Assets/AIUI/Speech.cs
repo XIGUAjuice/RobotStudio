@@ -14,9 +14,10 @@ class Speech : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     /* 讯飞AIUI websocket请求参数 */
     private static string BASE_URL = "ws://wsapi.xfyun.cn/v1/aiui";
     private static string ORIGIN = "http://wsapi.xfyun.cn";
-    private const string APPID = "4985560f";
-    private const string APIKEY = "5e5e4a90ea64a3d394e3b658b3babfdc";
-    private const string AUTH_ID = "347c84b84c7a69928eae544553ee439f";
+    // 以下信息模糊处理
+    private const string APPID = "xxxx";
+    private const string APIKEY = "xxxx";
+    private const string AUTH_ID = "xxxx";
     private const string SCENE = "main_box";
     private const string DATA_TYPE = "audio";
     private const string SAMPLE_RATE = "16000";
